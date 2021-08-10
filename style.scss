@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+$text-color-blue: hsl(238, 29%, 16%);
+$text-color-red: hsl(14, 88%, 65%);
+$neutral-text-color1: hsl(237, 12%, 33%);
+$neutral-text-color2: hsl(240, 6%, 50%);
+
+$divider-color: hsl(240, 5%, 91%);
+
+$gradient-color1 :hsl(273, 75%, 66%);
+$gradient-color2 : hsl(240, 73%, 65%);
+
+$font-size: 14px;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Kumbh Sans', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, $gradient-color1, $gradient-color2);
+  color: $text-color-blue;
+  overflow: hidden;
+}
+
+.card-container {
+  width: 70vw;
+  height: 70vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  position: relative;
+  border-radius: 15px;
+  box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.3);
+
+  .svg-container {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    overflow: hidden;
+
+    & > img {
+      position: absolute;
+
+      &.pattern {
+        width: 180%;
+        left: -115%;
+        top: -60%;
+      }
+      &.girl {
+        width: 80%;
+        left: -15%;
+        top: 20%;
+      }
+    }
+  }
+
+  .box-container {
+    width: fit-content;
+    position: relative;
+    left: -50%;
+    top: 12%;
+  }
+
+  .faq-container {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    padding: 60px;
+
+    .faq {
+      margin-bottom: 30px;
+    }
+
+    .ques-1, .ques-2, .ques-3, .ques-4, .ques-5 {
+      font-size: $font-size;
+      border-bottom: 1px solid $divider-color;
+      margin-bottom: 20px;
+      cursor: pointer;
+
+      .ques-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        color: $neutral-text-color1;
+
+        &:hover {
+          color: $text-color-red;
+        }
+        &:active {
+          font-weight: 700;
+          color: $text-color-blue;
+
+          & img {
+            transform: rotate(180deg);
+          }
+        }
+      }
+
+      & > p {
+        margin-bottom: 20px;
+        color: $neutral-text-color2;
+        display: none;
+      }
+
+      &:active {
+
+        & p {
+          display: flex;
+        }
+      }
+    }
+
+  }
+
+}
